@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng ký tài khoản — TinyClean</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="panel">
+    <div class="card-wrap">
+
+      <div class="brand">
+        <img src="assets/tinyclean-logo.png" alt="TinyClean" class="brand-logo">
+        <div class="brand-name">TinyClean</div>
+      </div>
+
+      <div class="card" id="card">
+
+        <!-- STEP 0: phone -->
+        <section class="step" data-step="0">
+          <h1 class="title">Đăng ký tài khoản</h1>
+          <p class="subtitle">Đăng ký miễn phí, dùng toàn bộ tính năng</p>
+
+          <div class="field" data-field="phone">
+            <label class="field-label">SĐT</label>
+            <input class="field-input" type="tel" inputmode="numeric" autocomplete="tel" data-input="phone">
+          </div>
+
+          <button class="btn-continue" data-action="go-step-1" disabled>Tiếp tục</button>
+
+          <div class="terms">
+            *Bằng việc đăng ký tài khoản, bạn xác nhận đồng ý với <a href="https://tinyuse.ai/tinyclean/privacy" target="_blank" rel="noopener noreferrer">điều khoản &amp; điều kiện</a> mà TinyClean quy định.
+          </div>
+        </section>
+
+        <!-- STEP 1: otp -->
+        <section class="step" data-step="1" hidden>
+          <div class="step-header">
+            <div class="back-arrow" data-action="back-to-step-0">←</div>
+            <div class="step-heading">Nhập mã xác nhận</div>
+          </div>
+
+          <div class="step-icon">
+            <img src="assets/ic-sms.svg" alt="SMS" style="width:60px;height:104px;">
+          </div>
+
+          <p class="step-desc">
+            Mã xác nhận đã được gửi đến tin nhắn Zalo của số điện thoại <strong data-text="phone-echo"></strong>
+          </p>
+
+          <div class="field" data-field="otp">
+            <label class="field-label">MÃ XÁC NHẬN</label>
+            <input class="field-input" type="text" inputmode="numeric" maxlength="6" data-input="otp">
+          </div>
+
+          <button class="btn-continue" data-action="go-step-2" disabled>Tiếp tục</button>
+
+          <div class="resend">NHẤN ĐỂ GỬI LẠI</div>
+        </section>
+
+        <!-- STEP 2: set password -->
+        <section class="step" data-step="2" hidden>
+          <div class="step-header">
+            <div class="back-arrow" data-action="back-to-step-1">←</div>
+            <div class="step-heading">Thiết lập mật khẩu</div>
+          </div>
+
+          <div class="step-icon">
+            <img src="assets/ic-password.svg" alt="Mật khẩu" style="width:100px;height:104px;">
+          </div>
+
+          <p class="step-plain">Vui lòng nhập mật khẩu để tiếp tục</p>
+
+          <div class="field field--password" data-field="password">
+            <label class="field-label">MẬT KHẨU *</label>
+            <input class="field-input" type="password" data-input="password">
+            <div class="eye-toggle" data-action="toggle-password">
+              <svg class="eye-icon eye-icon--on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M3 3l18 18"></path><path d="M10.58 10.58a2 2 0 002.83 2.83"></path><path d="M9.88 5.09A9.5 9.5 0 0112 5c5.5 0 9 5 9 7-.36.63-1.03 1.66-2.02 2.68M6.1 6.1C4.06 7.6 2.6 9.7 2 12c0 2 3.5 7 10 7 1.15 0 2.24-.15 3.24-.42"></path></svg>
+              <svg class="eye-icon eye-icon--off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+          </div>
+          <div class="password-hint" data-text="password-hint">*Mật khẩu tối thiểu 8 ký tự bao gồm cả chữ và số</div>
+
+          <button class="btn-continue" data-action="go-step-3" disabled>Tiếp tục</button>
+        </section>
+
+        <!-- STEP 3: personal + store info -->
+        <section class="step" data-step="3" hidden>
+          <div class="step-icon step-icon--sm">
+            <img src="assets/ic-success.svg" alt="Thành công" style="width:64px;height:64px;">
+          </div>
+          <p class="step-desc">
+            Chúc mừng bạn đã đăng ký tài khoản thành công! Thêm một vài thông tin nhỏ nữa để hoàn tất nhé.
+          </p>
+
+          <div class="section-title">Thông tin cá nhân</div>
+
+          <div class="field" data-field="fullName" style="margin-bottom:22px;">
+            <label class="field-label">HỌ VÀ TÊN (BẮT BUỘC)</label>
+            <input class="field-input" type="text" data-input="fullName">
+          </div>
+
+          <div class="field" data-field="email" style="margin-bottom:26px;">
+            <label class="field-label">EMAIL (KHÔNG BẮT BUỘC)</label>
+            <input class="field-input" type="email" data-input="email">
+          </div>
+
+          <div class="section-title" style="margin-bottom:8px;">Thông tin cửa hàng</div>
+          <div class="section-note">
+            Lưu ý: Điền thông tin <strong>cửa hàng đầu tiên</strong>, bạn có thể thiết lập thêm các cửa hàng khác sau đó.
+          </div>
+
+          <div class="field" data-field="storeName" style="margin-bottom:22px;">
+            <label class="field-label">TÊN CỬA HÀNG/THƯƠNG HIỆU (BẮT BUỘC)</label>
+            <input class="field-input" type="text" data-input="storeName">
+          </div>
+
+          <div class="field" data-field="address">
+            <label class="field-label">ĐỊA CHỈ (BẮT BUỘC)</label>
+            <input class="field-input" type="text" data-input="address">
+          </div>
+
+          <button class="btn-continue" data-action="go-step-4" disabled>Hoàn tất</button>
+        </section>
+
+        <!-- STEP 4: success / credentials -->
+        <section class="step" data-step="4" hidden>
+          <div class="success-icon-wrap">
+            <div class="success-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.9997 11.6211V18C19.9997 19.1046 19.1043 20 17.9997 20H5.99973C4.89516 20 3.99973 19.1046 3.99973 18V11.6211M15.9997 4L16.4997 9.75C16.4997 10.9926 17.5071 12 18.7497 12C19.9057 12 20.8581 11.1282 20.9853 10.0062C21.0045 9.83688 20.9779 9.66657 20.9349 9.50173L19.8897 5.49516C19.66 4.6145 18.8646 4 17.9545 4H6.04492C5.13479 4 4.33943 4.6145 4.10969 5.49516L3.0645 9.50173C3.02149 9.66657 2.99497 9.83688 3.01415 10.0062C3.1413 11.1282 4.0937 12 5.24973 12C6.49237 12 7.49973 10.9926 7.49973 9.75M7.99973 4L7.49973 9.75C7.49973 10.9926 8.50709 12 9.74973 12C10.9923 12 11.9997 10.9926 11.9997 9.75M16.4997 9.75C16.4997 10.9926 15.4923 12 14.2497 12C13.0071 12 11.9997 10.9926 11.9997 9.75M11.9997 9.75V4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="success-heading">
+            Cửa hàng của bạn đã <span class="success-heading-accent">sẵn sàng</span>
+          </div>
+
+          <div class="cred-box">
+            <div class="cred-row" data-row="store">
+              <div>
+                <div class="cred-label">Tên gian hàng</div>
+                <div class="cred-value" data-text="store-slug"></div>
+              </div>
+              <div class="cred-copy" data-action="copy-store">Sao chép</div>
+            </div>
+            <div class="cred-row" data-row="user">
+              <div>
+                <div class="cred-label">Tên đăng nhập</div>
+                <div class="cred-value" data-text="cred-phone"></div>
+              </div>
+              <div class="cred-copy" data-action="copy-user">Sao chép</div>
+            </div>
+            <div class="cred-row" data-row="pass">
+              <div>
+                <div class="cred-label">Mật khẩu</div>
+                <div class="cred-value" data-text="cred-password"></div>
+              </div>
+              <div class="cred-copy" data-action="copy-pass">Sao chép</div>
+            </div>
+          </div>
+
+          <button class="btn-start">Bắt đầu quản lý trên app</button>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>
