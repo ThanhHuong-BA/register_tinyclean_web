@@ -166,8 +166,10 @@ a:hover { color: var(--teal-hover); }
   color: var(--gray-400);
 }
 
-/* Browsers don't apply the [hidden] UA default to inline <svg> (namespace quirk) */
-.eye-icon[hidden] { display: none; }
+/* Use a class rather than the [hidden] attribute/.hidden property: Chromium
+   doesn't reflect either onto inline <svg> elements (namespace quirk), so
+   toggling .hidden in JS silently no-ops on SVG. */
+.eye-icon.is-hidden { display: none; }
 
 /* Buttons */
 .btn-continue,

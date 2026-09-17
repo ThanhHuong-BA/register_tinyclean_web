@@ -128,8 +128,8 @@
     state.showPassword = !state.showPassword;
     var input = fields.password.input;
     input.type = state.showPassword ? 'text' : 'password';
-    document.querySelector('.eye-icon--on').hidden = !state.showPassword;
-    document.querySelector('.eye-icon--off').hidden = state.showPassword;
+    document.querySelector('.eye-icon--on').classList.toggle('is-hidden', !state.showPassword);
+    document.querySelector('.eye-icon--off').classList.toggle('is-hidden', state.showPassword);
   });
 
   function setupCopy(action, rowKey, getValue) {
